@@ -6,17 +6,24 @@ namespace AbstractDemo
     {
         static void Main(string[] args)
         {
-            CreateEmployeeManager employee1 = new CreateEmployeeManager();
-            employee1.employeeBaseManager = new EmployeeManager();
+            CreateEmployeeManager employee1 = new CreateEmployeeManager
+            {
+                employeeBaseManager = new EmployeeManager()
+            };
+
             employee1.Create();
             employee1.getInfo();
 
-            CreateEmployeeManager engineer1 = new CreateEmployeeManager();
-            engineer1.employeeBaseManager = new EngineerManager();
+            CreateEmployeeManager engineer1 = new CreateEmployeeManager
+            {
+                employeeBaseManager = new EngineerManager()
+            };
+
             engineer1.Create();
             engineer1.getInfo();
 
             engineer1.DoRaise();
+            engineer1.DoRaise(16.2);
         }
     }
 
